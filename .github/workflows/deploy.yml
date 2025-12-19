@@ -1,0 +1,22 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Trigger Production Build
+        run: |
+          echo "🚀 Triggering Production deployment..."
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -d '{}' \
+            "here you add the link for production deployment"
